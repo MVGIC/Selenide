@@ -13,13 +13,13 @@ class OrderDeliveryCardTest {
       @Test
     void shouldOrderCard() {
           open("http://localhost:9999");
-          $("[data-test-id=city input]").setValue("Красноярск");
-          $("[data-test-id=date input]").setValue("09.06.21");
-          $("[data-test-id=name input]").setValue("Иван Иванов");
-          $("[data-test-id=phone input").setValue("+78005553535");
+          $("[data-test-id=city] input").setValue("Красноярск");
+          $("[data-test-id=date] input").setValue("09.06.21");
+          $("[data-test-id=name] input").setValue("Иван Иванов");
+          $("[data-test-id=phone] input").setValue("+78005553535");
           $("[data-test-id=agreement]").click();
           $$("button").find(exactText("Забронировать")).click();
-          $(withText("Встреча успешно забронирована")).shouldBe(visible, Duration.ofSeconds(10));
+          $(withText("Встреча успешно забронирована")).shouldBe(exist, Duration.ofSeconds(10));
       }
 }
 
