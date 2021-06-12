@@ -19,7 +19,7 @@ class OrderDeliveryCardTest {
           $("[data-test-id=phone] input").setValue("+78005553535");
           $("[data-test-id=agreement]").click();
           $$("button").find(exactText("Забронировать")).click();
-          $(withText("Встреча успешно забронирована")).shouldBe(exist, Duration.ofSeconds(10));
+          $(withText("Встреча успешно забронирована")).shouldHave(exist, Duration.ofSeconds(10));
       }
 }
 
